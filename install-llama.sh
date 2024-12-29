@@ -12,6 +12,7 @@ rm -rf build
 cmake -B build -DLLAMA_BUILD_SERVER=ON
 cmake --build build --config Release
 
+ollama pull llama3.1:8b
 
 curl -X POST http://localhost:11434/api/generate     -H "Content-Type: application/json"     -d '{
         "model": "llama3.1",
